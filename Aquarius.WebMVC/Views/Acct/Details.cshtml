@@ -1,0 +1,57 @@
+﻿@model Aquarius.Models.Acct.AcctDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AcctDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AcctID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AcctID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AcctType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AcctType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpenedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpenedUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvestorID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvestorID)
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AcctID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
