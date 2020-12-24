@@ -40,7 +40,7 @@ namespace Aquarius.WebMVC.Controllers
             }
 
             ModelState.AddModelError("", "The account could not be created.");
-            return View();
+            return View(model);
         }
 
         public ActionResult Details(int id)

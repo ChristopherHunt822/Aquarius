@@ -14,3 +14,6 @@ C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquari
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.csproj.CopyComplete
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.dll
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.pdb
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.Migrations.InitialCreate.resources
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.csproj.GenerateResource.cache
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.Migrations.Cryptos.resources

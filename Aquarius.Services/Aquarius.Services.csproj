@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcctService.cs" />
+    <Compile Include="CryptoService.cs" />
     <Compile Include="InvestorService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

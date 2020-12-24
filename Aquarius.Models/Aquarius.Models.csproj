@@ -58,11 +58,18 @@
     <Compile Include="Acct\AcctDetail.cs" />
     <Compile Include="Acct\AcctEdit.cs" />
     <Compile Include="Acct\AcctListItem.cs" />
+    <Compile Include="Crypto\CryptoCreate.cs" />
+    <Compile Include="Crypto\CryptoDetail.cs" />
+    <Compile Include="Crypto\CryptoEdit.cs" />
+    <Compile Include="Crypto\CryptoListItem.cs" />
     <Compile Include="Investor\InvestorCreate.cs" />
     <Compile Include="Investor\InvestorDetail.cs" />
     <Compile Include="Investor\InvestorEdit.cs" />
     <Compile Include="Investor\InvestorListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchase\PurchaseCreate.cs" />
+    <Compile Include="Purchase\PurchaseDetail.cs" />
+    <Compile Include="Purchase\PurchaseListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
