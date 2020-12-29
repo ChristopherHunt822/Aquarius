@@ -5,18 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aquarius.Models.Purchase
+namespace Aquarius.Models.Sale
 {
-    public class PurchaseListItem
+    public class SaleListItem
     {
-        public int PurchaseID { get; set; }
-  
+        public int SaleID { get; set; }
+
         public int AcctID { get; set; }
- 
+
         //public int CryptoID { get; set; }
 
-        [Display(Name = "Date of Purchase")]
-        public DateTimeOffset DatePurchased { get; set; }
+        [Display(Name = "Date of Sale")]
+        public DateTimeOffset SaleDate { get; set; }
 
         //public double Quantity { get; set; }
         //public decimal Price { get; set; }

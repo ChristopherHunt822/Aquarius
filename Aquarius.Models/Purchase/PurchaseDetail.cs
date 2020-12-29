@@ -16,10 +16,12 @@ namespace Aquarius.Models.Purchase
         public int CryptoID { get; set; }
 
         [Display(Name = "Date of Purchase")]
-        public DateTime DatePurchased { get; set; }
+        public DateTimeOffset DatePurchased { get; set; }
 
         public double Quantity { get; set; }
         public decimal Price { get; set; }
+
+        [Display(Name = "Total Cost")]
         public decimal TotalValue { get; set; }
     }
 }

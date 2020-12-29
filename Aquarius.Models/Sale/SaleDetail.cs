@@ -5,19 +5,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aquarius.Models.Purchase
+namespace Aquarius.Models.Sale
 {
-    public class PurchaseCreate
+    public class SaleDetail
     {
+        public int SaleID { get; set; }
 
-        [Required]
         public int AcctID { get; set; }
-        [Required]
+
         public int CryptoID { get; set; }
-        [Required]
+
+        [Display(Name = "Date of Sale")]
+        public DateTimeOffset SaleDate { get; set; }
+
         public double Quantity { get; set; }
-        [Required]
         public decimal Price { get; set; }
+
+        [Display(Name = "Total Cost")]
         public decimal TotalValue { get; set; }
     }
 }

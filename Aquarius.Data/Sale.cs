@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Aquarius.Data
 {
-    public class Purchase
+    public class Sale
     {
         [Key]
-        public int PurchaseID { get; set; }
+        public int SaleID { get; set; }
         [Required]
         public Guid OwnerID { get; set; }
 
@@ -22,19 +22,18 @@ namespace Aquarius.Data
 
         [Required]
         [ForeignKey(nameof(Crypto))]
-        public int  CryptoID { get; set; }
+        public int CryptoID { get; set; }
         public virtual Crypto Crypto { get; set; }
 
         [Required]
-        [Display(Name = "Date of Purchase")]
-        public DateTimeOffset DatePurchased { get; set; }
-        
+        [Display(Name = "Date of Sale")]
+        public DateTimeOffset SaleDate { get; set; }
+
         [Required]
         public double Quantity { get; set; }
         [Required]
         public decimal Price { get; set; }
         [Required]
         public decimal TotalValue { get; set; }
-
     }
 }

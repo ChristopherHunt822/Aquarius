@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Aquarius.Models.Purchase.PurchaseListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role="alert">
+
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PurchaseID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AcctID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatePurchased)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalValue)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcctID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatePurchased)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalValue)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.PurchaseID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.PurchaseID }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.PurchaseID })
+            </td>
+        </tr>
+    }
+
+</table>

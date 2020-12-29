@@ -1,4 +1,4 @@
-﻿using Aquarius.Models.Purchase;
+﻿using Aquarius.Models.Sale;
 using Aquarius.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -10,49 +10,48 @@ using System.Web.Mvc;
 namespace Aquarius.WebMVC.Controllers
 {
     [Authorize]
-    public class PurchaseController : Controller
+    public class SaleController : Controller
     {
-        // GET: Purchase
+        // GET: Sale
         public ActionResult Index()
         {
-            var service = CreatePurchaseService();
-            var model = service.GetPurchases();
-            return View(model);
+            return View();
         }
-        // GET: Purchase View
+        // GET: Sale View
         public ActionResult Create()
         {
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(PurchaseCreate model)
+        public ActionResult Create(SaleCreate model)
         {
             if (!ModelState.IsValid) return View(model);
 
-            var service = CreatePurchaseService();
+            var service = CreateSaleService();
 
-            if (service.CreatePurchase(model))
+            if (service.CreateSale(model))
             {
-                TempData["SaveResult"] = "The purchase was succesfully made.";
+                TempData["SaveResult"] = "The Sale was successfully completed.";
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "The purchase could not be completed, please try again.");
+            ModelState.AddModelError("", "The Sale could not be completed, please try again.");
             return View(model);
         }
 
         public ActionResult Details(int id)
         {
-            var svc = CreatePurchaseService();
-            var model = svc.GetPurchaseById(id);
+            var svc = CreateSaleService();
+            var model = svc.GetSaleById(id);
 
             return View(model);
         }
-        private PurchaseService CreatePurchaseService()
+
+        private SaleService CreateSaleService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new PurchaseService(userId);
+            var service = new SaleService(userId);
             return service;
         }
     }

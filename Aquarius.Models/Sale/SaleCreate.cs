@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aquarius.Models.Purchase
+namespace Aquarius.Models.Sale
 {
-    public class PurchaseCreate
+    public class SaleCreate
     {
-
         [Required]
         public int AcctID { get; set; }
         [Required]
