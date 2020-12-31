@@ -33,11 +33,13 @@ namespace Aquarius.Data
         public string City { get; set; }
         [Required]
         public string State { get; set; }
-        [Required(ErrorMessage = "Investor email is required.")]
-        [DataType(DataType.EmailAddress)]
+        [Display(Name = "Email address")]
+        [Required(ErrorMessage = "The email address is required")]
+        [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Investor phone number is required.")]
-        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "Phone Number")]
+        [Required(ErrorMessage = "A phone number is required")]
+        [Phone(ErrorMessage = "Invalid phone number")]
         public string PhoneNumber { get; set; }
 
         public virtual List<Acct> Accts { get; set; } = new List<Acct>();
