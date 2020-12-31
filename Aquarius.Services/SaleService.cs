@@ -23,6 +23,7 @@ namespace Aquarius.Services
                 new Sale()
                 {
                     OwnerID = _userId,
+                    AcctID = model.AcctID,
                     CryptoID = model.CryptoID,
                     Quantity = model.Quantity,
                     Price = model.Price,

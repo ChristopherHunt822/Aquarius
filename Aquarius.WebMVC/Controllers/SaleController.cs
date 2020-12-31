@@ -15,7 +15,9 @@ namespace Aquarius.WebMVC.Controllers
         // GET: Sale
         public ActionResult Index()
         {
-            return View();
+            var service = CreateSaleService();
+            var model = service.GetSales();
+            return View(model);
         }
         // GET: Sale View
         public ActionResult Create()

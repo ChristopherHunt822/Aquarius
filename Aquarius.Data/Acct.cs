@@ -29,7 +29,10 @@ namespace Aquarius.Data
         public int InvestorID { get; set; }
         public virtual Investor Investor { get; set; }
 
-        
+        public virtual List<Purchase> Purchases { get; set; } = new List<Purchase>();
+        public virtual List<Sale> Sales { get; set; } = new List<Sale>();
+
+
         public enum AcctTypeEnum { Individual, Retirement, CSP, HSA}
     }
 }

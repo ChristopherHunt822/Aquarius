@@ -9,11 +9,7 @@ C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\bin\Debug\Entity
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\bin\Debug\EntityFramework.SqlServer.xml
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.csprojAssemblyReference.cache
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.csproj.CoreCompileInputs.cache
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.csproj.CopyComplete
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.dll
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.pdb
-C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.Migrations.InitialCreate.resources
-C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.csproj.GenerateResource.cache
-C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.Migrations.Cryptos.resources

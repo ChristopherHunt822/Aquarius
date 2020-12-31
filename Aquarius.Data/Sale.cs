@@ -16,7 +16,7 @@ namespace Aquarius.Data
         public Guid OwnerID { get; set; }
 
         [Required]
-        [ForeignKey(nameof(Crypto))]
+        [ForeignKey(nameof(Acct))]
         public int AcctID { get; set; }
         public virtual Acct Acct { get; set; }
 
