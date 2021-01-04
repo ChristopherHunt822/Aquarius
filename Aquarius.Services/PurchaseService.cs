@@ -2,6 +2,7 @@
 using Aquarius.Models.Purchase;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace Aquarius.Services
             _userId = userId;
         }
         
-        public bool CreatePurchase(PurchaseCreate model)
+        public async Task<bool> CreatePurchase(PurchaseCreate model)
         {
             var entity =
                 new Purchase()
@@ -33,11 +34,11 @@ namespace Aquarius.Services
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Purchases.Add(entity);
-                return ctx.SaveChanges() == 1;
+                return await ctx.SaveChangesAsync() == 1;
             }
         }
         // GET: All Purchases
-        public IEnumerable<PurchaseListItem> GetPurchases()
+        public async Task<IEnumerable<PurchaseListItem>> GetPurchases()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -54,19 +55,19 @@ namespace Aquarius.Services
                                 DatePurchased = p.DatePurchased
                             }
                         );
-                return query.ToArray();
+                return await query.ToListAsync();
             }
         }
         //Get: Purchase by ID
 
-        public PurchaseDetail GetPurchaseById(int id)
+        public async Task<PurchaseDetail> GetPurchaseById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
-                    ctx
+                    await ctx
                         .Purchases
-                        .Single(p => p.PurchaseID == id && p.OwnerID == _userId);
+                        .SingleAsync(p => p.PurchaseID == id && p.OwnerID == _userId);
                 return
                     new PurchaseDetail
                     {

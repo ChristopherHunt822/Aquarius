@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -13,10 +14,10 @@ namespace Aquarius.WebMVC.Controllers
     public class SaleController : Controller
     {
         // GET: Sale
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
             var service = CreateSaleService();
-            var model = service.GetSales();
+            var model = await service.GetSales();
             return View(model);
         }
         // GET: Sale View
@@ -26,13 +27,13 @@ namespace Aquarius.WebMVC.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(SaleCreate model)
+        public async Task<ActionResult> Create(SaleCreate model)
         {
             if (!ModelState.IsValid) return View(model);
 
             var service = CreateSaleService();
 
-            if (service.CreateSale(model))
+            if (await service.CreateSale(model))
             {
                 TempData["SaveResult"] = "The Sale was successfully completed.";
                 return RedirectToAction("Index");
@@ -42,10 +43,10 @@ namespace Aquarius.WebMVC.Controllers
             return View(model);
         }
 
-        public ActionResult Details(int id)
+        public async Task<ActionResult> Details(int id)
         {
             var svc = CreateSaleService();
-            var model = svc.GetSaleById(id);
+            var model = await svc.GetSaleById(id);
 
             return View(model);
         }

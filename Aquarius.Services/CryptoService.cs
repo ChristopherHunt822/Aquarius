@@ -2,6 +2,7 @@
 using Aquarius.Models.Crypto;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace Aquarius.Services
             _userId = userId;
         }
 
-        public bool CreateCrypto(CryptoCreate model)
+        public async Task<bool> CreateCrypto(CryptoCreate model)
         {
             var entity =
                 new Crypto()
@@ -30,11 +31,11 @@ namespace Aquarius.Services
                         using (var ctx = new ApplicationDbContext())
                         {
                             ctx.Cryptos.Add(entity);
-                            return ctx.SaveChanges() == 1;
+                            return await ctx.SaveChangesAsync() == 1;
                         }
         }
 
-        public IEnumerable<CryptoListItem> GetCryptos()
+        public async Task<IEnumerable<CryptoListItem>> GetCryptos()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -51,18 +52,18 @@ namespace Aquarius.Services
                                     Symbol = c.Symbol
                                 }
                         );
-                return query.ToArray();
+                return await query.ToListAsync();
             }
         }
 
-        public CryptoDetail GetCryptoByID(int id)
+        public async Task<CryptoDetail> GetCryptoByID(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
-                    ctx
+                    await ctx
                         .Cryptos
-                        .Single(c => c.CryptoID == id && c.OwnerID == _userId);
+                        .SingleAsync(c => c.CryptoID == id && c.OwnerID == _userId);
                 return
                     new CryptoDetail
                     {
@@ -73,7 +74,7 @@ namespace Aquarius.Services
             }
         }
 
-        public bool UpdateCrypto(CryptoEdit model)
+        public async Task<bool> UpdateCrypto(CryptoEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -85,11 +86,11 @@ namespace Aquarius.Services
                 entity.Name = model.Name;
                 entity.Symbol = model.Symbol;
 
-                return ctx.SaveChanges() == 1;
+                return await ctx.SaveChangesAsync() == 1;
             }
         }
 
-        public bool DeleteCrypto(int cryptoID)
+        public async Task<bool> DeleteCrypto(int cryptoID)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -100,7 +101,7 @@ namespace Aquarius.Services
 
                 ctx.Cryptos.Remove(entity);
 
-                return ctx.SaveChanges() == 1;
+                return await ctx.SaveChangesAsync() == 1;
             }
         }
     }

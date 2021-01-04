@@ -2,6 +2,7 @@
 using Aquarius.Models.Acct;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace Aquarius.Services
             _userId = userId;
         }
 
-        public bool CreateAcct(AcctCreate model)
+        public async Task<bool> CreateAcct(AcctCreate model)
         {
             var entity =
                 new Acct()
@@ -32,11 +33,11 @@ namespace Aquarius.Services
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Accts.Add(entity);
-                return ctx.SaveChanges() == 1;
+                return await ctx.SaveChangesAsync() == 1;
             }
         }
 
-        public IEnumerable<AcctListItem> GetAccts()
+        public async Task<IEnumerable<AcctListItem>> GetAccts()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -54,18 +55,18 @@ namespace Aquarius.Services
                                     OpenedUtc = a.OpenedUtc,
                                 }
                         );
-                return query.ToArray();
+                return await query.ToListAsync();
             }
         }
 
-        public AcctDetail GetAcctById(int id)
+        public async Task<AcctDetail> GetAcctById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
-                    ctx
+                    await ctx
                         .Accts
-                        .Single(a => a.AcctID == id && a.OwnerID == _userId);
+                        .SingleAsync(a => a.AcctID == id && a.OwnerID == _userId);
                 return
                     new AcctDetail
                     {
@@ -78,7 +79,7 @@ namespace Aquarius.Services
             }
         }
 
-        public bool UpdateAcct(AcctEdit model)
+        public async Task<bool> UpdateAcct(AcctEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -91,10 +92,10 @@ namespace Aquarius.Services
                 entity.AcctType = (Acct.AcctTypeEnum)model.AcctType;
                 entity.InvestorID = model.InvestorID;
 
-                return ctx.SaveChanges() == 1; 
+                return await ctx.SaveChangesAsync() == 1; 
             }
         }
-        public bool DeleteAcct(int acctID)
+        public async Task<bool> DeleteAcct(int acctID)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -105,7 +106,7 @@ namespace Aquarius.Services
 
                 ctx.Accts.Remove(entity);
 
-                return ctx.SaveChanges() == 1;
+                return await ctx.SaveChangesAsync() == 1;
             }
         }
     }
