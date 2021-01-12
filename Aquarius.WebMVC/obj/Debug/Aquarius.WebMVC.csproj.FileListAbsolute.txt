@@ -115,3 +115,5 @@ C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\obj\Debug\Aqua
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\obj\Debug\Aquarius.WebMVC.csproj.CopyComplete
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\obj\Debug\Aquarius.WebMVC.dll
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\obj\Debug\Aquarius.WebMVC.pdb
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\bin\System.Net.Http.Formatting.dll
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\bin\System.Net.Http.Formatting.xml
