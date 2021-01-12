@@ -14,3 +14,7 @@ C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquari
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.dll
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.pdb
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.csprojAssemblyReference.cache
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\bin\Debug\Newtonsoft.Json.dll
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\bin\Debug\System.Net.Http.Formatting.dll
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\bin\Debug\Newtonsoft.Json.xml
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\bin\Debug\System.Net.Http.Formatting.xml

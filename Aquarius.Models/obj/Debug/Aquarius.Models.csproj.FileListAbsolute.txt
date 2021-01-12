@@ -14,3 +14,7 @@ C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Models\obj\Debug\Aqua
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Models\obj\Debug\Aquarius.Models.csproj.CopyComplete
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Models\obj\Debug\Aquarius.Models.dll
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Models\obj\Debug\Aquarius.Models.pdb
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Models\bin\Debug\Newtonsoft.Json.dll
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Models\bin\Debug\System.Net.Http.Formatting.dll
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Models\bin\Debug\Newtonsoft.Json.xml
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Models\bin\Debug\System.Net.Http.Formatting.xml

@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -13,10 +14,10 @@ namespace Aquarius.WebMVC.Controllers
     public class InvestorController : Controller
     {
         // GET: Investors
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
             var service = CreateInvestorService();
-            var model = service.GetInvestors();
+            var model = await service.GetInvestors();
 
             return View(model);
         }
@@ -29,13 +30,13 @@ namespace Aquarius.WebMVC.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(InvestorCreate model)
+        public async Task<ActionResult> Create(InvestorCreate model)
         {
             if (!ModelState.IsValid) return View(model);
 
             var service = CreateInvestorService();
 
-            if (service.CreateInvestor(model))
+            if (await service.CreateInvestor(model))
             {
                 TempData["SaveResult"] = "New investor was created.";
                 return RedirectToAction("Index");
@@ -47,18 +48,18 @@ namespace Aquarius.WebMVC.Controllers
 
         }
 
-        public ActionResult Details (int id)
+        public async Task<ActionResult> Details (int id)
         {
             var svc = CreateInvestorService();
-            var model = svc.GetInvestorByID(id);
+            var model = await svc.GetInvestorByID(id);
 
             return View(model);
         }
        
-        public ActionResult Edit(int id)
+        public async Task<ActionResult> Edit(int id)
         {
             var service = CreateInvestorService();
-            var detail = service.GetInvestorByID(id);
+            var detail = await service.GetInvestorByID(id);
             var model =
                 new InvestorEdit
                 {
@@ -75,7 +76,7 @@ namespace Aquarius.WebMVC.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, InvestorEdit model)
+        public async Task<ActionResult> Edit(int id, InvestorEdit model)
         {
             if (!ModelState.IsValid) return View(model);
 
@@ -86,7 +87,7 @@ namespace Aquarius.WebMVC.Controllers
             }
             var service = CreateInvestorService();
 
-            if (service.UpdateInvestor(model))
+            if (await service.UpdateInvestor(model))
             {
                 TempData["SaveResult"] = "The investor was updated.";
                 return RedirectToAction("Index");
@@ -97,21 +98,21 @@ namespace Aquarius.WebMVC.Controllers
         }
         /*
         [ActionName("Delete")]
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
             var svc = CreateInvestorService();
-            var model = svc.GetInvestorByID(id);
+            var model = await svc.GetInvestorByID(id);
 
             return View(model);
         }
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteInvestor(int id)
+        public async Task<ActionResult> DeleteInvestor(int id)
         {
             var service = CreateInvestorService();
 
-            service.DeleteInvestor(id);
+            await service.DeleteInvestor(id);
 
             TempData["SaveResult"] = "The Investor was deleted";
 

@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -13,10 +14,10 @@ namespace Aquarius.WebMVC.Controllers
     public class PurchaseController : Controller
     {
         // GET: Purchase
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
             var service = CreatePurchaseService();
-            var model = service.GetPurchases();
+            var model = await service.GetPurchases();
             return View(model);
         }
         // GET: Purchase View
@@ -26,13 +27,13 @@ namespace Aquarius.WebMVC.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(PurchaseCreate model)
+        public async Task<ActionResult> Create(PurchaseCreate model)
         {
             if (!ModelState.IsValid) return View(model);
 
             var service = CreatePurchaseService();
 
-            if (service.CreatePurchase(model))
+            if (await service.CreatePurchase(model))
             {
                 TempData["SaveResult"] = "The purchase was succesfully made.";
                 return RedirectToAction("Index");
@@ -42,10 +43,10 @@ namespace Aquarius.WebMVC.Controllers
             return View(model);
         }
 
-        public ActionResult Details(int id)
+        public async Task<ActionResult> Details(int id)
         {
             var svc = CreatePurchaseService();
-            var model = svc.GetPurchaseById(id);
+            var model = await svc.GetPurchaseById(id);
 
             return View(model);
         }

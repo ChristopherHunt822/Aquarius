@@ -2,6 +2,7 @@
 using Aquarius.Models.Sale;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace Aquarius.Services
             _userId = userId;
         }
         
-        public bool CreateSale(SaleCreate model)
+        public async Task<bool> CreateSale(SaleCreate model)
         {
             var entity =
                 new Sale()
@@ -33,12 +34,12 @@ namespace Aquarius.Services
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Sales.Add(entity);
-                return ctx.SaveChanges() == 1;
+                return await ctx.SaveChangesAsync() == 1;
             }
         }
         //GET: All Sales
 
-        public IEnumerable<SaleListItem> GetSales()
+        public async Task<IEnumerable<SaleListItem>> GetSales()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -55,19 +56,19 @@ namespace Aquarius.Services
                                 SaleDate = s.SaleDate
                             }
                         );
-                return query.ToArray();
+                return await query.ToListAsync();
             }
         }
         //Get: Purchase by ID
 
-        public SaleDetail GetSaleById(int id)
+        public async Task<SaleDetail> GetSaleById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
-                    ctx
+                    await ctx
                         .Sales
-                        .Single(p => p.SaleID == id && p.OwnerID == _userId);
+                        .SingleAsync(p => p.SaleID == id && p.OwnerID == _userId);
                 return
                     new SaleDetail
                     {

@@ -2,6 +2,7 @@
 using Aquarius.Models.Investor;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace Aquarius.Services
             _userId = userId;
         }
 
-        public bool CreateInvestor(InvestorCreate model)
+        public async Task<bool> CreateInvestor(InvestorCreate model)
         {
             var entity =
                 new Investor()
@@ -35,11 +36,11 @@ namespace Aquarius.Services
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Investors.Add(entity);
-                return ctx.SaveChanges() == 1;
+                return await ctx.SaveChangesAsync() == 1;
             }
         }
 
-        public IEnumerable<InvestorListItem> GetInvestors()
+        public async Task<IEnumerable<InvestorListItem>> GetInvestors()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -57,17 +58,17 @@ namespace Aquarius.Services
                                 }
                             );
 
-                return query.ToArray();
+                return await query.ToListAsync();
             }
         }
-        public InvestorDetail GetInvestorByID(int id)
+        public async Task<InvestorDetail> GetInvestorByID(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
-                    ctx
+                    await ctx
                         .Investors
-                        .Single(i => i.InvestorID == id && i.OwnerID == _userId);
+                        .SingleAsync(i => i.InvestorID == id && i.OwnerID == _userId);
                 return
                     new InvestorDetail
                     {
@@ -83,7 +84,7 @@ namespace Aquarius.Services
             }
         }
 
-        public bool UpdateInvestor(InvestorEdit model)
+        public async Task<bool> UpdateInvestor(InvestorEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -100,11 +101,11 @@ namespace Aquarius.Services
                 entity.Email = model.Email;
                 entity.PhoneNumber = model.PhoneNumber;
 
-                return ctx.SaveChanges() == 1;
+                return await ctx.SaveChangesAsync() == 1;
             }
         }
         /*
-        public bool DeleteInvestor (int investorID)
+        public async Task<bool> DeleteInvestor (int investorID)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -115,7 +116,7 @@ namespace Aquarius.Services
 
                 ctx.Investors.Remove(entity);
 
-                return ctx.SaveChanges() == 1;
+                return await ctx.SaveChangesAsync() == 1;
             }
         }
         */

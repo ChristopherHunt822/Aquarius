@@ -20,3 +20,7 @@ C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Services\obj\Debug\Aq
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Services\obj\Debug\Aquarius.Services.csproj.CopyComplete
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Services\obj\Debug\Aquarius.Services.dll
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Services\obj\Debug\Aquarius.Services.pdb
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Services\bin\Debug\Newtonsoft.Json.dll
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Services\bin\Debug\System.Net.Http.Formatting.dll
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Services\bin\Debug\Newtonsoft.Json.xml
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Services\bin\Debug\System.Net.Http.Formatting.xml
