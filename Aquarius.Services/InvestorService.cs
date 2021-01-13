@@ -1,5 +1,6 @@
 ﻿using Aquarius.Data;
-using Aquarius.Models.Investor;
+using Aquarius.Models.AcctModels;
+using Aquarius.Models.InvestorModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -16,6 +17,10 @@ namespace Aquarius.Services
         public InvestorService(Guid userId)
         {
             _userId = userId;
+        }
+
+        public InvestorService()
+        {
         }
 
         public async Task<bool> CreateInvestor(InvestorCreate model)
@@ -40,7 +45,7 @@ namespace Aquarius.Services
             }
         }
 
-        public async Task<IEnumerable<InvestorListItem>> GetInvestors()
+        public async Task<IEnumerable<InvestorListItem>> GetInvestorList()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -54,7 +59,7 @@ namespace Aquarius.Services
                                 {
                                     InvestorID = i.InvestorID,
                                     FirstName = i.FirstName,
-                                    LastName = i.LastName
+                                    LastName = i.LastName,
                                 }
                             );
 
@@ -79,8 +84,23 @@ namespace Aquarius.Services
                         City = entity.City,
                         State = entity.State,
                         Email = entity.Email,
-                        PhoneNumber = entity.PhoneNumber
+                        PhoneNumber = entity.PhoneNumber,
+                        Accts = entity.Accts.Select(
+                            a => new AcctListItem
+                            {
+                                AcctID = a.AcctID,
+                                AcctName = a.AcctName,
+                                AcctType = (AcctListItem.AcctTypeEnum)a.AcctType,
+                                TotalValue = a.TotalValue
+                            }).ToList()
                     };
+            }
+        }
+        public IEnumerable<Investor> GetInvestors()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Investors.ToList();
             }
         }
 

@@ -24,3 +24,5 @@ C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Services\bin\Debug\Ne
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Services\bin\Debug\System.Net.Http.Formatting.dll
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Services\bin\Debug\Newtonsoft.Json.xml
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Services\bin\Debug\System.Net.Http.Formatting.xml
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Services\bin\Debug\RestSharp.dll
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Services\bin\Debug\RestSharp.xml

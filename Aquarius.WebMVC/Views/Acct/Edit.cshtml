@@ -1,4 +1,4 @@
-﻿@model Aquarius.Models.Acct.AcctEdit
+﻿@model Aquarius.Models.AcctModels.AcctEdit
 
 @{
     ViewBag.Title = "Edit";
@@ -16,29 +16,32 @@
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.AcctID)
+    @Html.HiddenFor(model => model.InvestorID)
+    
+
 
     <div class="form-group">
-        @Html.LabelFor(model => model.InvestorID, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.AcctName, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.InvestorID, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.InvestorID, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.AcctName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.AcctName, "", new { @class = "text-danger" })
         </div>
     </div>
 
     <div class="form-group">
-    @Html.LabelFor(m => m.AcctType, htmlAttributes: new { @class = "control-label col-md-2" })
-    <div class="col-md-10">
-        @Html.EnumDropDownListFor(x => x.AcctType, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.AcctType, "", new { @class = "text-danger" })
+        @Html.LabelFor(m => m.AcctType, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EnumDropDownListFor(x => x.AcctType, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.AcctType, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
     </div>
 </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
 }
 
 <div>

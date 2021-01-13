@@ -117,3 +117,5 @@ C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\obj\Debug\Aqua
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\obj\Debug\Aquarius.WebMVC.pdb
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\bin\System.Net.Http.Formatting.dll
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\bin\System.Net.Http.Formatting.xml
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\bin\RestSharp.dll
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\bin\RestSharp.xml

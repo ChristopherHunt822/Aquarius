@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Aquarius.Models.Sale.SaleListItem>
+﻿@model IEnumerable<Aquarius.Models.SaleModels.SaleListItem>
 
 @{
     ViewBag.Title = "Index";
@@ -31,7 +31,7 @@
             @Html.DisplayNameFor(model => model.SaleDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TotalValue)
+            @Html.DisplayNameFor(model => model.Total)
         </th>
         <th></th>
     </tr>
@@ -49,12 +49,10 @@
                 @Html.DisplayFor(modelItem => item.SaleDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TotalValue)
+                @Html.DisplayFor(modelItem => item.Total)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.SaleID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.SaleID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.SaleID })
+                @Html.ActionLink("Details", "Details", new { id = item.SaleID }) 
             </td>
         </tr>
     }

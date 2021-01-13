@@ -60,29 +60,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Acct\AcctCreate.cs" />
-    <Compile Include="Acct\AcctDetail.cs" />
-    <Compile Include="Acct\AcctEdit.cs" />
-    <Compile Include="Acct\AcctListItem.cs" />
-    <Compile Include="Crypto\CryptoCreate.cs" />
-    <Compile Include="Crypto\CryptoDetail.cs" />
-    <Compile Include="Crypto\CryptoEdit.cs" />
-    <Compile Include="Crypto\CryptoListItem.cs" />
-    <Compile Include="Investor\InvestorCreate.cs" />
-    <Compile Include="Investor\InvestorDetail.cs" />
-    <Compile Include="Investor\InvestorEdit.cs" />
-    <Compile Include="Investor\InvestorListItem.cs" />
+    <Compile Include="AcctModels\AcctCreate.cs" />
+    <Compile Include="AcctModels\AcctDetail.cs" />
+    <Compile Include="AcctModels\AcctEdit.cs" />
+    <Compile Include="AcctModels\AcctListItem.cs" />
+    <Compile Include="CoinPriceAPIModels\CoinInfoModel.cs" />
+    <Compile Include="CoinPriceAPIModels\CoinDetailModel.cs" />
+    <Compile Include="CoinPriceAPIModels\CoinPriceModel.cs" />
+    <Compile Include="CryptoModels\CryptoCreate.cs" />
+    <Compile Include="CryptoModels\CryptoDetail.cs" />
+    <Compile Include="CryptoModels\CryptoEdit.cs" />
+    <Compile Include="CryptoModels\CryptoListItem.cs" />
+    <Compile Include="InvestorModels\InvestorCreate.cs" />
+    <Compile Include="InvestorModels\InvestorDetail.cs" />
+    <Compile Include="InvestorModels\InvestorEdit.cs" />
+    <Compile Include="InvestorModels\InvestorListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Purchase\PurchaseCreate.cs" />
-    <Compile Include="Purchase\PurchaseDetail.cs" />
-    <Compile Include="Purchase\PurchaseListItem.cs" />
-    <Compile Include="Sale\SaleCreate.cs" />
-    <Compile Include="Sale\SaleDetail.cs" />
-    <Compile Include="Sale\SaleListItem.cs" />
+    <Compile Include="PurchaseModels\PurchaseCreate.cs" />
+    <Compile Include="PurchaseModels\PurchaseDetail.cs" />
+    <Compile Include="PurchaseModels\PurchaseListItem.cs" />
+    <Compile Include="SaleModels\SaleCreate.cs" />
+    <Compile Include="SaleModels\SaleDetail.cs" />
+    <Compile Include="SaleModels\SaleListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aquarius.Data\Aquarius.Data.csproj">
+      <Project>{afb16e8d-5699-47ff-83a3-ffff69ba5380}</Project>
+      <Name>Aquarius.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

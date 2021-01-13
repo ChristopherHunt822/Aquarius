@@ -1,4 +1,4 @@
-﻿@model Aquarius.Models.Investor.InvestorDetail
+﻿@model Aquarius.Models.InvestorModels.InvestorDetail
 
 @{
     ViewBag.Title = "Details";
@@ -81,6 +81,23 @@
         <dd>
             @Html.DisplayFor(model => model.PhoneNumber)
         </dd>
+    </dl>
+
+    <h4>Accounts</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @foreach (var item in Model.Accts)
+        {
+
+            <dt>@Html.DisplayNameFor(modelItem => item.AcctID)</dt>
+            <dd>@Html.DisplayFor(modelItem => item.AcctID)</dd>
+            <dt>@Html.DisplayNameFor(modelItem => item.AcctType)</dt>
+            <dd>@Html.DisplayFor(modelItem => item.AcctType)</dd>
+            <dt>@Html.DisplayNameFor(modelItem => item.TotalValue)</dt>
+            <dd>@Html.DisplayFor(modelItem => item.TotalValue)</dd>
+            <dd></dd>
+            <dd>@Html.ActionLink("View Account", "Details", "Acct", new { id = item.AcctID }, null)</dd>
+        }
 
     </dl>
 </div>

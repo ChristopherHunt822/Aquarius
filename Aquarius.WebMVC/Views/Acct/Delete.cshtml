@@ -1,4 +1,4 @@
-﻿@model Aquarius.Models.Acct.AcctDetail
+﻿@model Aquarius.Models.AcctModels.AcctDetail
 
 @{
     ViewBag.Title = "Delete";
@@ -19,6 +19,13 @@
             @Html.DisplayFor(model => model.AcctID)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.AcctName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AcctName)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.TotalValue)
         </dt>

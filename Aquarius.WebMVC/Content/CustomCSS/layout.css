@@ -1,0 +1,13 @@
+﻿.row-space {
+    margin-top: 10em;
+}
+
+.backgroundStars {
+    background: url("image/ScrabbleTiles.jpg") no-repeat fixed top center;
+    padding: 0;
+    margin: 0;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+}

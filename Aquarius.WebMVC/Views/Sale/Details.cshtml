@@ -1,13 +1,13 @@
-﻿@model Aquarius.Models.Sale.SaleDetail
+﻿@model Aquarius.Models.SaleModels.SaleDetail
 
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+
 
 <div>
-    <h4>SaleDetail</h4>
+    <h3>Sale Details</h3>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -27,11 +27,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CryptoID)
+            @Html.DisplayNameFor(model => model.Symbol)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CryptoID)
+            @Html.DisplayFor(model => model.Symbol)
         </dd>
 
         <dt>
@@ -59,16 +59,15 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TotalValue)
+            @Html.DisplayNameFor(model => model.Total)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TotalValue)
+            @Html.DisplayFor(model => model.Total)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.SaleID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

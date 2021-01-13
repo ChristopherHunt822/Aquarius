@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Aquarius.Models.Purchase.PurchaseListItem>
+﻿@model IEnumerable<Aquarius.Models.PurchaseModels.PurchaseListItem>
 
 @{
     ViewBag.Title = "Index";
@@ -28,10 +28,10 @@
             @Html.DisplayNameFor(model => model.AcctID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DatePurchased)
+            @Html.DisplayNameFor(model => model.PurchaseDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TotalValue)
+            @Html.DisplayNameFor(model => model.Total)
         </th>
         <th></th>
     </tr>
@@ -46,15 +46,13 @@
                 @Html.DisplayFor(modelItem => item.AcctID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DatePurchased)
+                @Html.DisplayFor(modelItem => item.PurchaseDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TotalValue)
+                @Html.DisplayFor(modelItem => item.Total)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.PurchaseID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.PurchaseID }) |
-                @Html.ActionLink("Delete", "Delete", new {  id=item.PurchaseID })
+                @Html.ActionLink("Details", "Details", new { id=item.PurchaseID }) 
             </td>
         </tr>
     }

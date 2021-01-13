@@ -19,10 +19,11 @@ namespace Aquarius.Data
         public string Symbol { get; set; }
 
 
-        //[Required]
-        //public decimal Price { get; set; }
-        //[Required]
-        //public double MarketCap { get; set; }
+        [Required]
+        public decimal Price { get; set; }
+
+
+       
 
     }
 }

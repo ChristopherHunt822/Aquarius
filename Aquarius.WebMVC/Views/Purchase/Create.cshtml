@@ -1,4 +1,4 @@
-﻿@model Aquarius.Models.Purchase.PurchaseCreate
+﻿@model Aquarius.Models.PurchaseModels.PurchaseCreate
 
 @{
     ViewBag.Title = "Create";
@@ -18,16 +18,16 @@
         <div class="form-group">
             @Html.LabelFor(model => model.AcctID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.AcctID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.AcctID, ViewBag.AcctID as SelectList  , new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.AcctID, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CryptoID, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Symbol, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CryptoID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CryptoID, "", new { @class = "text-danger" })
+                @Html.EnumDropDownListFor(model => model.Symbol, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Symbol, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -48,10 +48,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TotalValue, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Total, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TotalValue, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TotalValue, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Total, new { @readonly = "readonly" })
+                @Html.ValidationMessageFor(model => model.Total, "", new { @class = "text-danger" })
             </div>
         </div>
 

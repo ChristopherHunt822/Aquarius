@@ -18,3 +18,6 @@ C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Models\bin\Debug\Newt
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Models\bin\Debug\System.Net.Http.Formatting.dll
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Models\bin\Debug\Newtonsoft.Json.xml
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Models\bin\Debug\System.Net.Http.Formatting.xml
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Models\bin\Debug\Aquarius.Data.dll
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Models\bin\Debug\Aquarius.Data.pdb
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Models\bin\Debug\Aquarius.Data.dll.config

@@ -1,4 +1,5 @@
-﻿using Aquarius.Models.Sale;
+﻿using Aquarius.Data;
+using Aquarius.Models.SaleModels;
 using Aquarius.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -23,6 +24,14 @@ namespace Aquarius.WebMVC.Controllers
         // GET: Sale View
         public ActionResult Create()
         {
+            List<Acct> Accts = (new AcctService()).GetAccts().ToList();
+            var query = from a in Accts
+                        select new SelectListItem()
+                        {
+                            Value = a.AcctID.ToString(),
+                            Text = a.AcctName
+                        };
+            ViewBag.AcctID = query.ToList();
             return View();
         }
         [HttpPost]

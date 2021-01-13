@@ -1,4 +1,4 @@
-﻿@model Aquarius.Models.Acct.AcctDetail
+﻿@model Aquarius.Models.AcctModels.AcctDetail
 
 @{
     ViewBag.Title = "Details";
@@ -7,7 +7,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>AcctDetail</h4>
+    <h4>Account Details</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -16,6 +16,13 @@
 
         <dd>
             @Html.DisplayFor(model => model.AcctID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AcctName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AcctName)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.AcctType)
@@ -47,7 +54,47 @@
         <dd>
             @Html.DisplayFor(model => model.InvestorID)
         </dd>
+    </dl>
+    <h4>Purchases</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @foreach (var item in Model.Purchases)
+        {
 
+            <dt>@Html.DisplayNameFor(modelItem => item.PurchaseID)</dt>
+            <dd>@Html.DisplayFor(modelItem => item.PurchaseID)</dd>
+            <dt>@Html.DisplayNameFor(modelItem => item.PurchaseDate)</dt>
+            <dd>@Html.DisplayFor(modelItem => item.PurchaseDate)</dd>
+            <dt>@Html.DisplayNameFor(modelItem => item.Symbol)</dt>
+            <dd>@Html.DisplayFor(modelItem => item.Symbol)</dd>
+            <dt>@Html.DisplayNameFor(modelItem => item.Quantity)</dt>
+            <dd>@Html.DisplayFor(modelItem => item.Quantity)</dd>
+            <dt>@Html.DisplayNameFor(modelItem => item.Total)</dt>
+            <dd>@Html.DisplayFor(modelItem => item.Total)</dd>
+            <dd></dd>
+            <dd>@Html.ActionLink("View Transaction", "Details", "Purchase", new { id = item.PurchaseID }, null)</dd>
+        }
+
+    </dl>
+    <h4>Sales</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @foreach (var item in Model.Sales)
+        {
+
+            <dt>@Html.DisplayNameFor(modelItem => item.SaleID)</dt>
+            <dd>@Html.DisplayFor(modelItem => item.SaleID)</dd>
+            <dt>@Html.DisplayNameFor(modelItem => item.SaleDate)</dt>
+            <dd>@Html.DisplayFor(modelItem => item.SaleDate)</dd>
+            <dt>@Html.DisplayNameFor(modelItem => item.Symbol)</dt>
+            <dd>@Html.DisplayFor(modelItem => item.Symbol)</dd>
+            <dt>@Html.DisplayNameFor(modelItem => item.Quantity)</dt>
+            <dd>@Html.DisplayFor(modelItem => item.Quantity)</dd>
+            <dt>@Html.DisplayNameFor(modelItem => item.Total)</dt>
+            <dd>@Html.DisplayFor(modelItem => item.Total)</dd>
+            <dd></dd>
+            <dd>@Html.ActionLink("View Transaction", "Details", "Sale", new { id = item.SaleID }, null)</dd>
+        }
 
     </dl>
 </div>

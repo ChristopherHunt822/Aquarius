@@ -18,3 +18,7 @@ C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\bin\Debug\Newton
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\bin\Debug\System.Net.Http.Formatting.dll
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\bin\Debug\Newtonsoft.Json.xml
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\bin\Debug\System.Net.Http.Formatting.xml
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.Migrations.Init.resources
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.csproj.GenerateResource.cache
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.Migrations.Total.resources
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.Migrations.AcctName.resources
