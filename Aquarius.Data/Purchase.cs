@@ -33,19 +33,24 @@ namespace Aquarius.Data
         [Display(Name = "Date of Purchase")]
         [DataMember]
         public DateTimeOffset PurchaseDate { get; set; }
-        
+
         [Required]
         [DataMember]
         public decimal Quantity { get; set; }
         [Required]
         [DataMember]
         public decimal Price { get; set; }
+
+        private decimal _total;
         [Required]
         [DataMember]
         public decimal Total
         {
-            get => Quantity * Price;
+            get => _total;
+            set => _total = Quantity * Price;
+
         }
+
 
         
 

@@ -40,14 +40,20 @@ namespace Aquarius.Data
         [Required]
         [DataMember]
         public decimal Price { get; set; }
+       
+        private decimal _total;
+
         [Required]
         [DataMember]
         public decimal Total
         {
-            get => Quantity * Price;
+            get => _total;
+            set => _total = Quantity * Price;
+
         }
 
-        
+
+
         public enum CryptoSymbolEnum { BTC = 1, ETH, LTC, XRP }
     }
 }

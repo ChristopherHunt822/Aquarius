@@ -20,12 +20,17 @@ namespace Aquarius.Models.PurchaseModels
         public decimal Quantity { get; set; }
         [Required]
         public decimal Price { get; set; }
+       
+        private decimal _total;
+
         public decimal Total
         {
-            get => Quantity * Price;
+            get => _total;
+            set => _total = Quantity * Price;
+
         }
 
-        
+
 
         public enum PCryptoSymbolEnum { BTC = 1, ETH, LTC, XRP }
     }

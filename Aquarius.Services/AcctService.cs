@@ -91,7 +91,8 @@ namespace Aquarius.Services
                                 PurchaseDate = p.PurchaseDate,
                                 Symbol = (PurchaseListItem.PCryptoSymbolEnum)p.Symbol,
                                 Quantity = p.Quantity,
-                                //Total = p.Total
+                                Price = p.Price,
+                                Total = p.Total
                             }).ToList(),
                         Sales = entity.Sales.Select(
                             p => new SaleListItem
@@ -100,7 +101,8 @@ namespace Aquarius.Services
                                 SaleDate = p.SaleDate,
                                 Symbol = (SaleListItem.CryptoSymbolEnum)p.Symbol,
                                 Quantity = p.Quantity,
-                                //Total = p.Total
+                                Price = p.Price,
+                                Total = p.Total
                             }).ToList()
 
                     };

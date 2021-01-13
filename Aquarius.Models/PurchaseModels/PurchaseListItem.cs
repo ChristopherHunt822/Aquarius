@@ -23,10 +23,13 @@ namespace Aquarius.Models.PurchaseModels
         
         public decimal Price { get; set; }
 
-        [Editable(false)]
+        private decimal _total;
+        [Display(Name = "Total Cost")]
         public decimal Total
         {
-            get => Quantity * Price;
+            get => _total;
+            set => _total = Quantity * Price;
+
         }
 
 

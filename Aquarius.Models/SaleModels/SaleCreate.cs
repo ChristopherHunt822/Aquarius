@@ -18,9 +18,13 @@ namespace Aquarius.Models.SaleModels
         public decimal Quantity { get; set; }
         [Required]
         public decimal Price { get; set; }
+        private decimal _total;
+
         public decimal Total
         {
-            get => Quantity * Price;
+            get => _total;
+            set => _total = Quantity * Price;
+
         }
 
 

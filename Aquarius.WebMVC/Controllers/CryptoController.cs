@@ -14,6 +14,9 @@ namespace Aquarius.WebMVC.Controllers
     [Authorize]
     public class CryptoController : Controller
     {
+        // NOT USED
+
+
         // GET: Crypto
         public async Task<ActionResult> Index()
         {

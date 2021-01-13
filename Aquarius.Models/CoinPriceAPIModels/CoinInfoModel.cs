@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Aquarius.Models.CoinPriceAPIModels
 {
-    class CoinInfoModel
+    public class CoinInfoModel
     {
 
         public class Rootobject

@@ -1,3 +1,29 @@
-﻿@import "./CustomCSS/layout.css";
-@import "./CustomCSS/LandingPage.css";
+﻿
+#myCarouselStyle {
+    background-color: #33b5cc;
+    color: whitesmoke;
+    text-align: center;
+    margin-top: 2em;
+}
 
+.row-space {
+    margin-top: 10em;
+}
+
+.backgroundStars {
+    background: url("./Images/Stars.jpg") no-repeat fixed top center;
+    padding: 0;
+    margin: 0;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+}
+
+.sp160 {
+    line-height: 1.60;
+}
+
+#btc {
+    line-height: 1.60;
+}

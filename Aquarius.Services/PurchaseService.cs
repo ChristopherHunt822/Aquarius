@@ -51,7 +51,9 @@ namespace Aquarius.Services
                             {
                                 PurchaseID = p.PurchaseID,
                                 AcctID = p.AcctID,
-                                //Total = p.Total,
+                                Quantity = p.Quantity,
+                                Price = p.Price,
+                                Total = p.Total,
                                 PurchaseDate = p.PurchaseDate
                             }
                         );
@@ -76,7 +78,7 @@ namespace Aquarius.Services
                         Symbol = (PurchaseDetail.PCryptoSymbolEnum)entity.Symbol,
                         Quantity = entity.Quantity,
                         Price = entity.Price,
-                        //Total = entity.Total,
+                        Total = entity.Total,
                         PurchaseDate = entity.PurchaseDate
                     };
             }

@@ -22,3 +22,5 @@ C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquari
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.csproj.GenerateResource.cache
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.Migrations.Total.resources
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.Migrations.AcctName.resources
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.Migrations.setTotal.resources
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.Data\obj\Debug\Aquarius.Data.Migrations.SaleTotal.resources

@@ -55,29 +55,29 @@ namespace Aquarius.Services
             return myDeserializedClass;
         }
 
-        //public string CallKrakenAPI()
-        //{
+        public string CallKrakenAPI()
+        {
 
-        //    List<String> listOfCoinPairs = new List<String>() { "BTC", "ETH", "LTC", "DOT", "KSM" };
+            List<String> listOfCoinPairs = new List<String>() { "BTC", "ETH", "LTC", "LRC" };
 
-        //    List<CoinAPIListItem> listOfCrypto = new List<CoinAPIListItem>();
+            List<CoinInfoModel> listOfCrypto = new List<CoinInfoModel>();
 
-        //    foreach (string coinpair in listOfCoinPairs)
-        //    {
-        //        var client = new RestClient($"https://api.kraken.com/0/public/Ticker?pair={coinpair}USD'");
-        //        client.Timeout = -1;
-        //        var request = new RestRequest(Method.GET);
-        //        IRestResponse response = client.Execute(request);
+            foreach (string coinpair in listOfCoinPairs)
+            {
+                var client = new RestClient($"https://api.kraken.com/0/public/Ticker?pair={coinpair}USD'");
+                client.Timeout = -1;
+                var request = new RestRequest(Method.GET);
+                IRestResponse response = client.Execute(request);
 
-        //        var myDeserializedClass = JsonConvert.DeserializeObject<CoinAPIListItem>(response.Content);
+                var myDeserializedClass = JsonConvert.DeserializeObject<CoinInfoModel>(response.Content);
 
-        //        listOfCrypto.Add(myDeserializedClass);
-        //    }
+                listOfCrypto.Add(myDeserializedClass);
+            }
 
-        //    var listOfCryptoInJson = JsonConvert.SerializeObject(listOfCrypto);
+            var listOfCryptoInJson = JsonConvert.SerializeObject(listOfCrypto);
 
-        //    return listOfCryptoInJson;
-        //}
+            return listOfCryptoInJson;
+        }
     }
 }
 

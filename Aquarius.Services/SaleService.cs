@@ -28,7 +28,7 @@ namespace Aquarius.Services
                     Symbol = (Sale.CryptoSymbolEnum)model.Symbol,
                     Quantity = model.Quantity,
                     Price = model.Price,
-                    //Total = model.Total,
+                    Total = model.Total,
                     SaleDate = DateTimeOffset.Now
                 };
             using (var ctx = new ApplicationDbContext())
@@ -52,14 +52,16 @@ namespace Aquarius.Services
                             {
                                 SaleID = s.SaleID,
                                 AcctID = s.AcctID,
-                                //Total = s.Total,
+                                Quantity = s.Quantity,
+                                Price = s.Price,
+                                Total = s.Total,
                                 SaleDate = s.SaleDate
                             }
                         );
                 return await query.ToListAsync();
             }
         }
-        //Get: Purchase by ID
+        //Get: Sale by ID
 
         public async Task<SaleDetail> GetSaleById(int id)
         {
@@ -77,7 +79,7 @@ namespace Aquarius.Services
                         Symbol = (SaleDetail.CryptoSymbolEnum)entity.Symbol,
                         Quantity = entity.Quantity,
                         Price = entity.Price,
-                        //Total = entity.Total,
+                        Total = entity.Total,
                         SaleDate = entity.SaleDate
                     };
             }
