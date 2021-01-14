@@ -14,8 +14,8 @@ Clone the solution file and open in Visual Studio.
 
 [Aquarius on Azure](https://aquariuswebmvc.azurewebsites.net/)
 
-
-
+### Home Page:
+![Home Page](/Aquarius.WebMVC/Content/Images/Screenshot.PNG)
 
 ### Resource Links
 
