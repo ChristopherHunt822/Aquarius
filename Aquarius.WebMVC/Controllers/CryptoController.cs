@@ -1,5 +1,5 @@
 ﻿using Aquarius.Data;
-using Aquarius.Models.Crypto;
+using Aquarius.Models.CryptoModels;
 using Aquarius.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -14,6 +14,9 @@ namespace Aquarius.WebMVC.Controllers
     [Authorize]
     public class CryptoController : Controller
     {
+        // NOT USED
+
+
         // GET: Crypto
         public async Task<ActionResult> Index()
         {
@@ -21,7 +24,7 @@ namespace Aquarius.WebMVC.Controllers
             var model = await service.GetCryptos();
             return View(model);
         }
-
+  
         public ActionResult Create()
         {
             return View();
@@ -44,7 +47,7 @@ namespace Aquarius.WebMVC.Controllers
             ModelState.AddModelError("", "The Crypto could not be added.");
             return View(model);
         }
-
+  
         public async Task<ActionResult> Details(int id)
         {
             var svc = CreateCryptoService();
@@ -52,6 +55,15 @@ namespace Aquarius.WebMVC.Controllers
 
             return View(model);
         }
+        
+        public async Task<ActionResult> GetCryptoBySymbol(string symbol)
+        {
+            var svc = CreateCryptoService();
+            var model = await svc.GetCryptoBySymbol(symbol);
+
+            return View(model);
+        }
+
         
         public async Task<ActionResult> Edit(int id)
         {
@@ -68,7 +80,7 @@ namespace Aquarius.WebMVC.Controllers
             return View(model);
         }
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]      
         public async Task<ActionResult> Edit(int id, CryptoEdit model)
         {
             if (!ModelState.IsValid) return View(model);
@@ -90,7 +102,7 @@ namespace Aquarius.WebMVC.Controllers
             return View();
         }
 
-        [ActionName("Delete")]
+        [ActionName("Delete")]      
         public async Task<ActionResult> Delete(int id)
         {
             var svc = CreateCryptoService();

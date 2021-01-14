@@ -1,8 +1,10 @@
-﻿using Aquarius.Models.Acct;
+﻿using Aquarius.Data;
+using Aquarius.Models.AcctModels;
 using Aquarius.Services;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -17,12 +19,20 @@ namespace Aquarius.WebMVC.Controllers
         public async Task<ActionResult> Index()
         {
             var service = CreateAcctService();
-            var model = await service.GetAccts();
+            var model = await service.GetAcctList();
             return View(model);
         }
         // GET: Create View
         public ActionResult Create()
         {
+            List<Investor> Investors = (new InvestorService()).GetInvestors().ToList();
+            var query = from i in Investors
+                        select new SelectListItem()
+                        {
+                            Value = i.InvestorID.ToString(),
+                            Text = i.FullName
+                        };
+            ViewBag.InvestorID = query.ToList();
             return View();
         }
 
@@ -115,5 +125,7 @@ namespace Aquarius.WebMVC.Controllers
             var service = new AcctService(userId);
             return service;
         }
+
+
     }
 }

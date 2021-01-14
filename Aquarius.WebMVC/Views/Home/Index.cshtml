@@ -1,31 +1,107 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<!-- Carousel -->
+<div id="myCarousel" class="carousel slide row-space" data-ride="carousel" style="background-color: #33b5cc;color: whitesmoke;text-align:center;margin-top:3em;">
 
+
+    <div class="carousel-inner">
+        <div class="item active">
+            <h3>Defi Coins coming soon!</h3>
+        </div>
+
+        <div class="item">
+            <h3>No trading fees for new Investors for 30 days!!</h3>
+        </div>
+
+        <div class="item">
+            <h3>Rest assured with cold storage coverage</h3>
+        </div>
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<!-- Jumbotron -->
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>Buy Bitcoin and Crypto instantly!</h1>
+    <p class="lead">Buy, sell and store with Aquarius. Staking coming soon!</p>
+    <img src="~/Content/Images/BuyBitcoin.png" alt="Transactions" />
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<!-- TradingView Widget BEGIN -->
+<!-- From tradingview.com -->
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright">
+        <a href="https://www.tradingview.com" rel="noopener" target="_blank">
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+                {
+                    "symbols": [
+                        {
+                            "proName": "BITSTAMP:BTCUSD",
+                            "title": "BTC/USD"
+                        },
+                        {
+                            "proName": "BITSTAMP:ETHUSD",
+                            "title": "ETH/USD"
+                        },
+                        {
+                            "description": "LTC/USD",
+                            "proName": "KRAKEN:LTCUSD"
+                        },
+                        {
+                            "description": "LRC/USD",
+                            "proName": "BITFINEX:LRCUSD"
+                        },
+                        {
+                            "description": "DOT/USD",
+                            "proName": "KRAKEN:DOTUSD"
+                        }
+                    ],
+                        "colorTheme": "dark",
+                            "isTransparent": false,
+                                "showSymbolLogo": true,
+                                    "locale": "en"
+                }
+            </script>
+        </a>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <!-- TradingView Widget END -->
+
+
+
+
+    <div class="row row-space">
+        <h1 style="text-align: center; padding-bottom:1em; ">Click on any coin to learn more</h1>
+        <div class="col-md-3"><a href="https://localhost:44398/Home/CryptoPedia#btc"><img src="~/Content/Images/bitcoin.png" alt="Bitcoin"></a></div>
+        <div class="col-md-3"><a href="https://localhost:44398/Home/CryptoPedia#eth"><img src="~/Content/Images/ethereum.png" alt="Ethereum"></a></div>
+        <div class="col-md-3"><a href="https://localhost:44398/Home/CryptoPedia#ltc"><img src="~/Content/Images/litecoin.png" alt="Litecoin"></a></div>
+        <div class="col-md-3"><a href="https://localhost:44398/Home/CryptoPedia#lrc"><img src="~/Content/Images/loopring.png" alt="Loopring"></a></div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+
+    <div class="row row-space" style="color: black;text-align:center;">
+        <div class="col-md-4">
+            <h2>Secure Storage</h2>
+            <p>
+                Sleep assured at night knowing your funds are safe in our secure offline cold storage.
+            </p>
+
+        </div>
+        <div class="col-md-4">
+            <h2>Free instant banking!</h2>
+            <p>Aquarius offers <b>FREE</b> banking whether you are purchasing or selling your favorite Cryptos</p>
+        </div>
+        <div class="col-md-4">
+            <h2>Insurance Protection</h2>
+            <p>All Cryptocurrency stored on our servers is backed by industry leading insurance.</p>
+        </div>
     </div>
-</div>

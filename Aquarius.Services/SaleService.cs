@@ -1,5 +1,5 @@
 ﻿using Aquarius.Data;
-using Aquarius.Models.Sale;
+using Aquarius.Models.SaleModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -25,10 +25,10 @@ namespace Aquarius.Services
                 {
                     OwnerID = _userId,
                     AcctID = model.AcctID,
-                    CryptoID = model.CryptoID,
+                    Symbol = (Sale.CryptoSymbolEnum)model.Symbol,
                     Quantity = model.Quantity,
                     Price = model.Price,
-                    TotalValue = model.TotalValue,
+                    Total = model.Total,
                     SaleDate = DateTimeOffset.Now
                 };
             using (var ctx = new ApplicationDbContext())
@@ -52,14 +52,16 @@ namespace Aquarius.Services
                             {
                                 SaleID = s.SaleID,
                                 AcctID = s.AcctID,
-                                TotalValue = s.TotalValue,
+                                Quantity = s.Quantity,
+                                Price = s.Price,
+                                Total = s.Total,
                                 SaleDate = s.SaleDate
                             }
                         );
                 return await query.ToListAsync();
             }
         }
-        //Get: Purchase by ID
+        //Get: Sale by ID
 
         public async Task<SaleDetail> GetSaleById(int id)
         {
@@ -74,10 +76,10 @@ namespace Aquarius.Services
                     {
                         SaleID = entity.SaleID,
                         AcctID = entity.AcctID,
-                        CryptoID = entity.CryptoID,
+                        Symbol = (SaleDetail.CryptoSymbolEnum)entity.Symbol,
                         Quantity = entity.Quantity,
                         Price = entity.Price,
-                        TotalValue = entity.TotalValue,
+                        Total = entity.Total,
                         SaleDate = entity.SaleDate
                     };
             }

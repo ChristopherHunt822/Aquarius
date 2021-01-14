@@ -26,5 +26,10 @@ namespace Aquarius.WebMVC.Controllers
 
             return View();
         }
+
+        public ActionResult CryptoPedia()
+        {
+            return View();
+        }
     }
 }

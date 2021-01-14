@@ -1,10 +1,10 @@
-﻿@model Aquarius.Models.Investor.InvestorCreate
+﻿@model Aquarius.Models.InvestorModels.InvestorCreate
 
 @{
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>I see a lot of HODL in your future.</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>InvestorCreate</h4>
+        
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">

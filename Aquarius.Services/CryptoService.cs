@@ -1,5 +1,6 @@
 ﻿using Aquarius.Data;
-using Aquarius.Models.Crypto;
+using Aquarius.Models.CoinPriceAPIModels;
+using Aquarius.Models.CryptoModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -60,6 +61,7 @@ namespace Aquarius.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
+
                 var entity =
                     await ctx
                         .Cryptos
@@ -71,6 +73,30 @@ namespace Aquarius.Services
                         Name = entity.Name,
                         Symbol = entity.Symbol
                     };
+            }
+        }
+
+        public async Task<List<CoinPriceModel>> GetCryptoBySymbol(string symbol)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var service = new CoinService();
+
+                var coinPrice = await service.GetCoinPrice(symbol);
+
+                string _base = coinPrice.Base;
+                double price = coinPrice.Amount;
+
+                var query = await ctx.Cryptos
+                        .Where(Crypto => Crypto.Symbol == symbol)
+                        .Select(c => new CoinPriceModel
+                        {
+                            Base = _base,
+                            Amount = price
+
+                        }).ToListAsync();
+                
+                return query;
             }
         }
 

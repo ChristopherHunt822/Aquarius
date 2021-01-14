@@ -1,4 +1,4 @@
-﻿using Aquarius.Models.Investor;
+﻿using Aquarius.Models.InvestorModels;
 using Aquarius.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -17,7 +17,7 @@ namespace Aquarius.WebMVC.Controllers
         public async Task<ActionResult> Index()
         {
             var service = CreateInvestorService();
-            var model = await service.GetInvestors();
+            var model = await service.GetInvestorList();
 
             return View(model);
         }

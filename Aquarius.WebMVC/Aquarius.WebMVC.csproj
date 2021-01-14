@@ -191,6 +191,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Index.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -244,7 +245,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Investor\Index.cshtml" />
     <Content Include="Views\Investor\Create.cshtml" />
-    <Content Include="Views\Investor\Details.cshtml" />
     <Content Include="Views\Investor\Edit.cshtml" />
     <Content Include="Views\Acct\Index.cshtml" />
     <Content Include="Views\Acct\Create.cshtml" />
@@ -261,11 +261,14 @@
     <Content Include="Views\Purchase\Create.cshtml" />
     <Content Include="Views\Purchase\Details.cshtml" />
     <Content Include="Views\Sale\Index.cshtml" />
-    <Content Include="Views\Sale\Create.cshtml" />
     <Content Include="Views\Sale\Details.cshtml" />
+    <Content Include="Views\Investor\Details.cshtml" />
+    <Content Include="Views\Sale\Create.cshtml" />
+    <Content Include="Views\Home\CryptoPedia.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
