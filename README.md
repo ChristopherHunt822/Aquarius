@@ -1,6 +1,6 @@
 # Aquarius
 
-Aquarius is an ASP.NET MVC 5 Web Application that allows for the purchases and sale of cryptocurrencies.
+####Aquarius is an ASP.NET MVC 5 Web Application that allows for the purchases and sale of cryptocurrencies.
 ------
 
 ### Installation
