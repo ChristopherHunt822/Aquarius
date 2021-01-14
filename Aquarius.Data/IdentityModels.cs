@@ -34,6 +34,11 @@ namespace Aquarius.Data
 
         public DbSet<Investor> Investors { get; set; }
         public DbSet<Acct> Accts { get; set; }
+        public DbSet<Crypto> Cryptos { get; set; }
+        public DbSet<Purchase> Purchases { get; set; }
+        public DbSet<Sale> Sales { get; set; }
+        //public DbSet<WatchList> Watchlists { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

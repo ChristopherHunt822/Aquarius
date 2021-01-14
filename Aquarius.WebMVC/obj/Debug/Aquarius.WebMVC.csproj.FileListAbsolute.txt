@@ -1,5 +1,3 @@
-C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\obj\Debug\Aquarius.WebMVC.csprojAssemblyReference.cache
-C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\obj\Debug\Aquarius.WebMVC.csproj.CoreCompileInputs.cache
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\bin\Aquarius.WebMVC.dll.config
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\bin\Aquarius.WebMVC.dll
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\bin\Aquarius.WebMVC.pdb
@@ -112,6 +110,12 @@ C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\bin\Microsoft.
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\bin\Microsoft.Owin.Security.OAuth.xml
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\obj\Debug\Aquarius.WebMVC.csprojAssemblyReference.cache
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\obj\Debug\Aquarius.WebMVC.csproj.CoreCompileInputs.cache
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\obj\Debug\Aquarius.WebMVC.csproj.CopyComplete
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\obj\Debug\Aquarius.WebMVC.dll
 C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\obj\Debug\Aquarius.WebMVC.pdb
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\bin\System.Net.Http.Formatting.dll
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\bin\System.Net.Http.Formatting.xml
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\bin\RestSharp.dll
+C:\ElevenFiftyProjects\RedBadge\Aquarius\Aquarius\Aquarius.WebMVC\bin\RestSharp.xml

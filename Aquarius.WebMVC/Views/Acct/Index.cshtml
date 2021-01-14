@@ -1,10 +1,10 @@
-﻿@model IEnumerable<Aquarius.Models.Acct.AcctListItem>
+﻿@model IEnumerable<Aquarius.Models.AcctModels.AcctListItem>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Accounts</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -25,7 +25,7 @@
             @Html.DisplayNameFor(model => model.AcctID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TotalValue)
+            @Html.DisplayNameFor(model => model.AcctName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.OpenedUtc)
@@ -40,15 +40,15 @@
                 @Html.DisplayFor(modelItem => item.AcctID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TotalValue)
+                @Html.DisplayFor(modelItem => item.AcctName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.OpenedUtc)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.AcctID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.AcctID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.AcctID })
+                @Html.ActionLink("Edit", "Edit", new { id = item.AcctID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.AcctID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.AcctID })
             </td>
         </tr>
     }

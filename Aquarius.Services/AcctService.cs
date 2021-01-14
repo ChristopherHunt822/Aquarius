@@ -1,7 +1,10 @@
 ﻿using Aquarius.Data;
-using Aquarius.Models.Acct;
+using Aquarius.Models.AcctModels;
+using Aquarius.Models.PurchaseModels;
+using Aquarius.Models.SaleModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,12 +20,17 @@ namespace Aquarius.Services
             _userId = userId;
         }
 
-        public bool CreateAcct(AcctCreate model)
+        public AcctService()
+        {
+        }
+
+        public async Task<bool> CreateAcct(AcctCreate model)
         {
             var entity =
                 new Acct()
                 {
                     OwnerID = _userId,
+                    AcctName = model.AcctName,
                     AcctType = (Acct.AcctTypeEnum)model.AcctType,
                     TotalValue = model.TotalValue,
                     OpenedUtc = DateTimeOffset.Now,
@@ -32,11 +40,11 @@ namespace Aquarius.Services
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Accts.Add(entity);
-                return ctx.SaveChanges() == 1;
+                return await ctx.SaveChangesAsync() == 1;
             }
         }
 
-        public IEnumerable<AcctListItem> GetAccts()
+        public async Task<IEnumerable<AcctListItem>> GetAcctList()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -49,36 +57,67 @@ namespace Aquarius.Services
                                 new AcctListItem
                                 {
                                     AcctID = a.AcctID,
+                                    AcctName = a.AcctName,
                                     AcctType = (AcctListItem.AcctTypeEnum)a.AcctType,
                                     TotalValue = a.TotalValue,
                                     OpenedUtc = a.OpenedUtc,
                                 }
                         );
-                return query.ToArray();
+                return await query.ToListAsync();
             }
         }
 
-        public AcctDetail GetAcctById(int id)
+        public async Task<AcctDetail> GetAcctById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
-                    ctx
+                    await ctx
                         .Accts
-                        .Single(a => a.AcctID == id && a.OwnerID == _userId);
+                        .SingleAsync(a => a.AcctID == id && a.OwnerID == _userId);
                 return
                     new AcctDetail
                     {
                         InvestorID = entity.InvestorID,
                         AcctID = entity.AcctID,
+                        AcctName = entity.AcctName,
                         AcctType = (AcctDetail.AcctTypeEnum)entity.AcctType,
                         TotalValue = entity.TotalValue,
-                        OpenedUtc = entity.OpenedUtc
+                        OpenedUtc = entity.OpenedUtc,
+                        Purchases = entity.Purchases.Select(
+                            p => new PurchaseListItem
+                            {
+                                PurchaseID = p.PurchaseID,
+                                PurchaseDate = p.PurchaseDate,
+                                Symbol = (PurchaseListItem.PCryptoSymbolEnum)p.Symbol,
+                                Quantity = p.Quantity,
+                                Price = p.Price,
+                                Total = p.Total
+                            }).ToList(),
+                        Sales = entity.Sales.Select(
+                            p => new SaleListItem
+                            {
+                                SaleID = p.SaleID,
+                                SaleDate = p.SaleDate,
+                                Symbol = (SaleListItem.CryptoSymbolEnum)p.Symbol,
+                                Quantity = p.Quantity,
+                                Price = p.Price,
+                                Total = p.Total
+                            }).ToList()
+
                     };
             }
         }
 
-        public bool UpdateAcct(AcctEdit model)
+        public IEnumerable<Acct> GetAccts()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Accts.ToList();
+            }
+        }
+
+        public async Task<bool> UpdateAcct(AcctEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -88,13 +127,14 @@ namespace Aquarius.Services
                         .Single(a => a.AcctID == model.AcctID && a.OwnerID == _userId);
 
                 entity.AcctID = model.AcctID;
+                entity.AcctName = model.AcctName;
                 entity.AcctType = (Acct.AcctTypeEnum)model.AcctType;
                 entity.InvestorID = model.InvestorID;
 
-                return ctx.SaveChanges() == 1; 
+                return await ctx.SaveChangesAsync() == 1; 
             }
         }
-        public bool DeleteAcct(int acctID)
+        public async Task<bool> DeleteAcct(int acctID)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -105,7 +145,7 @@ namespace Aquarius.Services
 
                 ctx.Accts.Remove(entity);
 
-                return ctx.SaveChanges() == 1;
+                return await ctx.SaveChangesAsync() == 1;
             }
         }
     }

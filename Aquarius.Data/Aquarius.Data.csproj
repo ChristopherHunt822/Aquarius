@@ -43,9 +43,16 @@
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,13 +62,54 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Acct.cs" />
+    <Compile Include="Crypto.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Investor.cs" />
+    <Compile Include="Migrations\202101102047022_Init.cs" />
+    <Compile Include="Migrations\202101102047022_Init.Designer.cs">
+      <DependentUpon>202101102047022_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101110014068_Total.cs" />
+    <Compile Include="Migrations\202101110014068_Total.Designer.cs">
+      <DependentUpon>202101110014068_Total.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101111631426_AcctName.cs" />
+    <Compile Include="Migrations\202101111631426_AcctName.Designer.cs">
+      <DependentUpon>202101111631426_AcctName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101131825112_setTotal.cs" />
+    <Compile Include="Migrations\202101131825112_setTotal.Designer.cs">
+      <DependentUpon>202101131825112_setTotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101131831262_SaleTotal.cs" />
+    <Compile Include="Migrations\202101131831262_SaleTotal.Designer.cs">
+      <DependentUpon>202101131831262_SaleTotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchase.cs" />
+    <Compile Include="Sale.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202101102047022_Init.resx">
+      <DependentUpon>202101102047022_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101110014068_Total.resx">
+      <DependentUpon>202101110014068_Total.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101111631426_AcctName.resx">
+      <DependentUpon>202101111631426_AcctName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101131825112_setTotal.resx">
+      <DependentUpon>202101131825112_setTotal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101131831262_SaleTotal.resx">
+      <DependentUpon>202101131831262_SaleTotal.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
