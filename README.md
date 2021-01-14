@@ -11,7 +11,7 @@ Clone the solution file and open in Visual Studio.
 
 ### Published on Azure
 
-####[Aquarius on Azure](https://aquariuswebmvc.azurewebsites.net/)
+[Aquarius on Azure](https://aquariuswebmvc.azurewebsites.net/)
 
 
 
