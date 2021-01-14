@@ -16,9 +16,11 @@ Clone the solution file and open in Visual Studio.
 
 ### Home Page:
 
-![Home Page](/Aquarius.WebMVC/Content/Images/Screenshot.PNG)
+![Home Page](/Aquarius.WebMVC/Content/Images/Screenshot.png)
 
-https://github.com/ChristopherHunt822/Aquarius/blob/master/Aquarius.WebMVC/Content/Images/Screenshot.png
+![alt text][logo]
+
+[logo]: https://github.com/ChristopherHunt822/Aquarius/blob/master/Aquarius.WebMVC/Content/Images/Screenshot.png "Home page"
 
 ### Resource Links
 
